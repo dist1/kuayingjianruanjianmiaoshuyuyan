@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+<html lang="zh-CN" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>跨硬件软件描述语言参考手册(1.0) &#8212; 跨软件硬件描述语言  文档</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=7d86a446"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=beaddf03"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
     <link rel="prev" title="欢迎查看跨软件硬件描述语言的文档！" href="index.html" />
@@ -32,17 +31,19 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="id1">
-<h1>跨硬件软件描述语言参考手册(1.0)<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+  <section id="id1">
+<h1>跨硬件软件描述语言参考手册(1.0)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
 <p>** Trans-hardware-software Descript Language **</p>
-<div class="section" id="id2">
-<h2>0.环境<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>跨硬件软件描述语言自2019年发布以来，至今已经4年。在今天，这个语言总体上仍然是设计上先进的。</p>
+<p>如果您希望扩展这个语言，获得帮助，或者有任何的想法，欢迎联系我，我的邮箱是 <a class="reference external" href="mailto:ltaoist&#37;&#52;&#48;163&#46;com">ltaoist<span>&#64;</span>163<span>&#46;</span>com</a> 。如果这个语言对您的生活或工作产生了积极的帮助，这对我们非常有意义，欢迎告诉我。如果您希望捐赠，也欢迎联系我们。</p>
+<section id="id2">
+<h2>0.环境<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
 <blockquote>
 <div><p>一个环境中的对象应该圈起来。如果是多个环境叠加（这是有可能的），那就意味着有交叉的域。</p>
 <p>如果一个环境中的对象什么都没有，那就是一个空环境。</p>
 <p>例子：</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |--------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |--------|
 &gt;&gt;&gt;    | 布丁   |
 &gt;&gt;&gt;    | 狗A    |
 &gt;&gt;&gt;    |--------|        ……（环境1）
@@ -52,7 +53,7 @@
 <div><p>↑这个环境里有一个布丁和一条狗。</p>
 <p>也可以画的比较弯曲：</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    /--------\
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    /--------\
 &gt;&gt;&gt;    | 布丁   |
 &gt;&gt;&gt;    | 狗A    |
 &gt;&gt;&gt;    \--------/        ……（其实还是环境1）
@@ -61,7 +62,7 @@
 <blockquote>
 <div><p>也可以画的大一点宽一点：</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |--------------------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |--------------------------------|
 &gt;&gt;&gt;    |                                |
 &gt;&gt;&gt;    |                         布丁   |
 &gt;&gt;&gt;    |                                |
@@ -73,7 +74,7 @@
 <blockquote>
 <div><p>↑这个环境也是有一个布丁和一条狗。</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |--------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |--------|
 &gt;&gt;&gt;    |        |
 &gt;&gt;&gt;    |        |
 &gt;&gt;&gt;    |--------|    ……（环境2）
@@ -82,14 +83,14 @@
 <blockquote>
 <div><p>↑这个环境什么也没有。</p>
 </div></blockquote>
-</div>
-<div class="section" id="id3">
-<h2>1.实物<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id3">
+<h2>1.实物<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
 <blockquote>
 <div><p>一个物体就是一个具体的物理对象。比如人，物，某个机械结构部件。</p>
 <p>我们看环境1：</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |--------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |--------|
 &gt;&gt;&gt;    | 布丁   |
 &gt;&gt;&gt;    | 狗A    |
 &gt;&gt;&gt;    |--------|        ……（环境1）
@@ -100,7 +101,7 @@
 <p>物体用方括号括起来强调他当时物质性。</p>
 <p>例子：</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |--------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |--------|
 &gt;&gt;&gt;    | [MCU]  |
 &gt;&gt;&gt;    | 狗A    |
 &gt;&gt;&gt;    |--------|        ……（环境3）
@@ -110,7 +111,7 @@
 <div><p>↑这个环境有一条狗和一块MCU。</p>
 <p>更多的例子：</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |-------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |-------------|
 &gt;&gt;&gt;    |    [MCU]    |
 &gt;&gt;&gt;    |    [stm32]  |
 &gt;&gt;&gt;    |-------------|        ……（环境4）
@@ -122,7 +123,7 @@
 <p>那么[MCU]到底是什么？留给你们。</p>
 <p>不太强调的物质用 () ，例如</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |----------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |----------------------|
 &gt;&gt;&gt;    |    (光传感器) [灯泡]  |
 &gt;&gt;&gt;    |----------------------|        ……（环境x）
 </pre></div>
@@ -130,13 +131,13 @@
 <blockquote>
 <div><p>这个环境有一个(光传感器)，还有一个[灯泡]。</p>
 </div></blockquote>
-</div>
-<div class="section" id="id4">
-<h2>2.实物的软件设施和穿戴设备<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id4">
+<h2>2.实物的软件设施和穿戴设备<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
 <blockquote>
 <div><p>如果一个实物，也就是硬件上面搭着一个什么软件，就在他后面后缀一个 / 和相应的软件设施。</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |-------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |-------------|
 &gt;&gt;&gt;    |    电脑      |
 &gt;&gt;&gt;    |-------------|        ……（环境5）
 </pre></div>
@@ -144,7 +145,7 @@
 <blockquote>
 <div><p>↑这里是一个环境，然后这个环境有台电脑。</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |----------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |----------------|
 &gt;&gt;&gt;    |    电脑/linux   |
 &gt;&gt;&gt;    |----------------|        ……（环境6）
 </pre></div>
@@ -153,7 +154,7 @@
 <div><p>↑这里是一个环境，然后这个环境有台电脑，跑着linux。</p>
 <p>/可以连用。</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |-----------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |-----------------------|
 &gt;&gt;&gt;    |    电脑/linux/apache   |
 &gt;&gt;&gt;    |-----------------------|        ……（环境7）
 </pre></div>
@@ -161,7 +162,7 @@
 <blockquote>
 <div><p>↑这里是一个环境，然后这个环境有台电脑，跑着linux和apache。</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |------------------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |------------------------------|
 &gt;&gt;&gt;    |    电脑A/linux/apache         |
 &gt;&gt;&gt;    |    电脑B/windows/视频播放器    |
 &gt;&gt;&gt;    |    电脑C/mac/iTunes     [狗A] |
@@ -172,7 +173,7 @@
 <div><p>↑这里是一个环境，然后这个环境有三台电脑，一台跑着linux，还跑了个Apache，一台跑了windows，上面还有个视频播放器，还有一台是一个mac，上面有个iTunes。此外这个环境还有一条狗。</p>
 <p>用 + 表示这个实物还穿戴的设备。</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |-------------------------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;    |-------------------------------------|
 &gt;&gt;&gt;    |    电脑A/linux/apache                |
 &gt;&gt;&gt;    |    电脑B/windows/视频播放器           |
 &gt;&gt;&gt;    |    电脑C/mac/iTunes     [狗A]+收音机 |
@@ -182,41 +183,41 @@
 <blockquote>
 <div><p>↑这里是一个环境，然后这个环境有三台电脑，一台跑着linux，还跑了个Apache，一台跑了windows，上面还有个视频播放器，还有一台是一个mac，上面有个iTunes。此外这个环境还有一条狗。这个狗还带着一台收音机。</p>
 </div></blockquote>
-</div>
-<div class="section" id="id5">
-<h2>3. 解析式<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id5">
+<h2>3. 解析式<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
 <p>使用 = 表示左侧的东西可以解析为右边。</p>
 <p>应该保证这种解析是相等的，完备的。</p>
 <p>例如：</p>
 <p>%%%</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 冯氏机 = 输入设备 + 输出设备 + 存储器 + 运算器 + 控制器
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 冯氏机 = 输入设备 + 输出设备 + 存储器 + 运算器 + 控制器
 &gt;&gt;&gt;                                                 …… 式子1
 </pre></div>
 </div>
 <p>%%%</p>
 <p>就一种理解的方法来说，我们举个不一定大家都认为的例子：</p>
 <p>%%%</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 计算机 = 计算机的软件 + 计算机的硬件
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 计算机 = 计算机的软件 + 计算机的硬件
 &gt;&gt;&gt;                            …… 式子2
 </pre></div>
 </div>
 <p>%%%</p>
 <p>又例如：</p>
 <p>%%%</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 振华中学2003级5班 = 振华中学2003级5班老师们 + 振华中学2003级5班学生
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 振华中学2003级5班 = 振华中学2003级5班老师们 + 振华中学2003级5班学生
 &gt;&gt;&gt;                                                         …… 式子3
 </pre></div>
 </div>
 <p>%%%</p>
 <p>又或者：</p>
 <p>%%%</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 振华中学2003级5班 = 振华中学2003级5班委会 + 振华中学2003级5班非班委学生
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 振华中学2003级5班 = 振华中学2003级5班委会 + 振华中学2003级5班非班委学生
 &gt;&gt;&gt;                                                         …… 式子4
 </pre></div>
 </div>
 <p>%%%</p>
 <p>%%%</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 振华中学2003级5班 = 振华中学2003级5班的公共财物 + 振华中学2003级5班学生老师
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 振华中学2003级5班 = 振华中学2003级5班的公共财物 + 振华中学2003级5班学生老师
 &gt;&gt;&gt;                                                        …… 式子5
 </pre></div>
 </div>
@@ -225,7 +226,7 @@
 而式子4则不认为振华中学2003级5班老师们也是振华中学2003级5班的一部分。</p>
 <p>对比式子3和式子5，式子5认为振华中学2003级5班的公共财物（扫把，黑板，桌子凳子之类的总和）也是振华中学2003级5班的一部分，而式子3则不认为振华中学2003级5班的公共财物也是振华中学2003级5班的一部分。同时他们都认为振华中学2003级5班老师们是振华中学2003级5班的一部分。</p>
 <p>那这个振华中学2003级5班的公共财物又是什么呢？假如振华中学2003级5班的教室是这样子的而且刚刚就是这样子的：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |----------------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |----------------------------|
 &gt;&gt;&gt;  |窗A         黑板          门|
 &gt;&gt;&gt;  |卫生工具    讲台      饮水机|
 &gt;&gt;&gt;  |桌子1   桌子2  桌子3  桌子4 |
@@ -238,43 +239,43 @@
 </pre></div>
 </div>
 <p>如果门窗也属于公共财物，那么基本上：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">振华中学2003级5班的公共财物</span> <span class="o">=</span> <span class="n">窗A</span> <span class="o">+</span> <span class="n">黑板</span> <span class="o">+</span> <span class="n">门</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">振华中学2003级5班的公共财物</span> <span class="o">=</span> <span class="n">窗A</span> <span class="o">+</span> <span class="n">黑板</span> <span class="o">+</span> <span class="n">门</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="o">+</span> <span class="n">卫生工具</span> <span class="o">+</span> <span class="n">讲台</span> <span class="o">+</span> <span class="n">饮水机</span> <span class="o">+</span> <span class="n">Σ</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span> <span class="n">桌子i</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="o">+</span> <span class="n">Σ</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span> <span class="n">凳子i</span>
 </pre></div>
 </div>
 <p>如果振华中学2003级5班的教室不是这样子的……那就看振华中学2003级5班的教室是什么样子的吧 ：-）</p>
-</div>
-<div class="section" id="id6">
-<h2>4.抽象系统总体<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id6">
+<h2>4.抽象系统总体<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
 <p>解析式的一个常见用法是表述整个系统由什么构成：</p>
 <p>%%%</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 系统总体 = 系统的部分1 + 系统的部分2 + 系统的部分3 ……
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 系统总体 = 系统的部分1 + 系统的部分2 + 系统的部分3 ……
 &gt;&gt;&gt;         …… 式子6
 </pre></div>
 </div>
 <p>%%%</p>
 <p>例如：</p>
 <p>%%%</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">系统总体</span> <span class="o">=</span> <span class="n">环境9</span> <span class="o">+</span> <span class="n">环境11</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">系统总体</span> <span class="o">=</span> <span class="n">环境9</span> <span class="o">+</span> <span class="n">环境11</span>
 </pre></div>
 </div>
 <p>%%%</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |-------------------------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |-------------------------------------|
 &gt;&gt;&gt;  |    电脑A/linux/apache               |
 &gt;&gt;&gt;  |    电脑B/windows/视频播放器         |
 &gt;&gt;&gt;  |    电脑C/mac/iTunes     [狗A]+收音机|
 &gt;&gt;&gt;  |-------------------------------------|        ……（环境9）
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |-------------------------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |-------------------------------------|
 &gt;&gt;&gt;  |    广播台      余淮                 |
 &gt;&gt;&gt;  |-------------------------------------|        ……（环境11）
 </pre></div>
 </div>
-</div>
-<div class="section" id="id7">
-<h2>5.系统流程/线路/信息介质<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id7">
+<h2>5.系统流程/线路/信息介质<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
 <blockquote>
 <div><p>如果是双向的通路，也即A可以传给B，B也可以传给A，画 -</p>
 <p>如果是单向的，画 -&gt;</p>
@@ -283,7 +284,7 @@
 <p>直接用传感器感知的环境动态使用 ~~</p>
 <p>例如：</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |---------------------------------------------------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |---------------------------------------------------------------|
 &gt;&gt;&gt;  |                                                               |
 &gt;&gt;&gt;  |    |-------------------------------------|                    |
 &gt;&gt;&gt;  |    |    电脑A/linux/apache               |                    |
@@ -301,7 +302,7 @@
 </pre></div>
 </div>
 <p>就是说，广播台通过电磁波传递信息给收音机。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |---------------------------------------------------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |---------------------------------------------------------------|
 &gt;&gt;&gt;  |                                                               |
 &gt;&gt;&gt;  |    |-------------------------------------|                    |
 &gt;&gt;&gt;  |    |    电脑A/linux/apache               |                    |
@@ -320,7 +321,7 @@
 </div>
 <p>这就是说，余淮通过智力调用广播台。注意到余淮本身就有直接感知环境的能力。</p>
 <p>我们这里假设，余淮一看到灯光就会去调用广播台：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |---------------------------------------------------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |---------------------------------------------------------------|
 &gt;&gt;&gt;  |                                                               |
 &gt;&gt;&gt;  |    |-------------------------------------|                    |
 &gt;&gt;&gt;  |    |    电脑A/linux/apache               |                    |
@@ -338,7 +339,7 @@
 </pre></div>
 </div>
 <p>同时，狗如果听到了G，就会去开电脑C，听到了其他的就会去开电脑A：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |---------------------------------------------------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |---------------------------------------------------------------|
 &gt;&gt;&gt;  |                                                               |
 &gt;&gt;&gt;  |    |------------------------------------------|               |
 &gt;&gt;&gt;  |    |    电脑A/linux/apache &lt;--------+ 其他&gt;&gt;&gt;    |               |
@@ -357,7 +358,7 @@
 </div>
 <p>这样子我们就画好了一整个的，如果余淮看到了灯光，他跑去开启广播台，然后狗A听到了之后去开电脑A或者电脑C的过程。</p>
 <p>另一个可能是我们不用电磁波，用耳机或者USB之类的：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |---------------------------------------------------------------|
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;  |---------------------------------------------------------------|
 &gt;&gt;&gt;  |                                                               |
 &gt;&gt;&gt;  |    |------------------------------------------|               |
 &gt;&gt;&gt;  |    |    电脑A/linux/apache &lt;--------+ 其他&gt;&gt;&gt;    |               |
@@ -375,10 +376,10 @@
 </pre></div>
 </div>
 <p>这里我们搞了一条耳机线和一台录音机，然后狗A配了一台耳机，来实现环境12差不多的效果。</p>
-</div>
-<div class="section" id="id8">
-<h2>6. 更多的例子<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span>       <span class="o">|-------------------------------------------------------------|</span>
+</section>
+<section id="id8">
+<h2>6. 更多的例子<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span>       <span class="o">|-------------------------------------------------------------|</span>
 <span class="gp">&gt;&gt;&gt; </span>       <span class="o">|</span>                                                             <span class="o">|</span>
 <span class="gp">&gt;&gt;&gt; </span>       <span class="o">|</span>                          <span class="n">USB线直连PCB</span>                       <span class="o">|</span>
 <span class="gp">&gt;&gt;&gt; </span>       <span class="o">|</span>    <span class="o">%</span><span class="n">室温上升</span><span class="o">%</span> <span class="o">~~</span> <span class="p">(</span><span class="n">温度传感器</span><span class="p">)</span> <span class="o">----&gt;</span> <span class="p">[</span><span class="n">stm32</span><span class="p">]</span><span class="o">/</span><span class="n">机械臂控制程序</span>  <span class="o">|</span>
@@ -393,8 +394,8 @@
 </div>
 <p>在这里，室温上升，温度传感器感知，通过USB传递到 [stm32] 的机器上，这个机器装有机械臂控制程序。机械臂控制程序通过WiFi，控制机械臂。然后机械臂物理运动到报警按钮处，然后发出了报警声。</p>
 <p>另一个方法是工作人员直接通过手按下报警按钮。</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -413,7 +414,7 @@
 
 
 <h3>导航</h3>
-<p class="caption"><span class="caption-text">目录:</span></p>
+<p class="caption" role="heading"><span class="caption-text">目录:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">跨硬件软件描述语言参考手册(1.0)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">0.环境</a></li>
@@ -436,15 +437,15 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>快速搜索</h3>
+  <h3 id="searchlabel">快速搜索</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="转向" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="提交" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -461,8 +462,8 @@
       &copy;2019, LTaoist.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
       <a href="_sources/跨硬件软件描述语言.rst.txt"
